@@ -14,7 +14,7 @@ if(!$_POST['yourname']) {
 }
 
 if(!$_POST['yourdistrict']) {
-	$_POST['yourdistrict'] = '-';
+	$data[2] = '-';
 } else {
 	$data[2] = $_POST['yourdistrict'];
 }
@@ -68,6 +68,7 @@ if(!$_POST['text6']) {
 	$data[11] = $_POST['text6'];
 }
 ksort($data);
+// echo '<pre>';print_r($data);exit;
 $file = fopen("vinitng.csv","a");
 fputcsv($file,$data);
 fclose($file);
